@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <title>YouTube Player</title>
     <style>
+        /* Ensure the body and html take the full height of the viewport */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        /* Style the player to fill the entire page */
         #player {
-            width: 100%;
-            max-width: 640px;
-            height: 360px;
-            margin: 0 auto;
-            background: #000;
+            width: 100vw; /* Use viewport width */
+            height: 100vh; /* Use viewport height */
+            background: #000; /* Optional: Background color */
         }
     </style>
     <script src="https://www.youtube.com/iframe_api"></script>
@@ -30,6 +37,7 @@
         }
 
         function playVideo() {
+            console.log("playVideo called");
             player.playVideo();
         }
 
@@ -48,8 +56,6 @@
     </script>
 </head>
 <body>
-    <div id="player-container">
-        <div id="player"></div>
-    </div>
+    <div id="player"></div>
 </body>
 </html>
