@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>YouTube Player</title>
+    <style>
+        #player {
+            width: 100%;
+            max-width: 640px;
+            height: 360px;
+            margin: 0 auto;
+            background: #000;
+        }
+    </style>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         var player;
 
-        // YouTube API function to create a new player
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 videoId: 'rQwME8G1Cgs', // Default video ID
@@ -17,18 +25,16 @@
             });
         }
 
-        // Called when the player is ready
         function onPlayerReady(event) {
-            // Optionally start video automatically (may be blocked by autoplay restrictions)
-            // event.target.playVideo();
+            console.log("Player is ready");
         }
 
-        // JavaScript functions to control the video
         function playVideo() {
             player.playVideo();
         }
 
         function pauseVideo() {
+            console.log("pauseVideo called");
             player.pauseVideo();
         }
 
@@ -43,12 +49,7 @@
 </head>
 <body>
     <div id="player-container">
-        <!-- YouTube player container -->
         <div id="player"></div>
     </div>
-
-    <!-- Add button to manually play video -->
-    <button onclick="playVideo()">Play Video</button>
-
 </body>
 </html>
