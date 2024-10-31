@@ -19,7 +19,8 @@
 
         // Called when the player is ready
         function onPlayerReady(event) {
-            // Set up default behavior if needed
+            // Optionally start video automatically (may be blocked by autoplay restrictions)
+            // event.target.playVideo();
         }
 
         // JavaScript functions to control the video
@@ -45,5 +46,9 @@
         <!-- YouTube player container -->
         <div id="player"></div>
     </div>
+
+    <!-- Add button to manually play video -->
+    <button onclick="playVideo()">Play Video</button>
+
 </body>
 </html>
