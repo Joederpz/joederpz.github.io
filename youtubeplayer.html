@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Player</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        var player;
+
+        // YouTube API function to create a new player
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                videoId: 'rQwME8G1Cgs', // Default video ID
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        // Called when the player is ready
+        function onPlayerReady(event) {
+            // Set up default behavior if needed
+        }
+
+        // JavaScript functions to control the video
+        function playVideo() {
+            player.playVideo();
+        }
+
+        function pauseVideo() {
+            player.pauseVideo();
+        }
+
+        function seekTo(seconds) {
+            player.seekTo(seconds, true);
+        }
+
+        function loadNewVideo(videoId) {
+            player.loadVideoById(videoId);
+        }
+    </script>
+</head>
+<body>
+    <div id="player-container">
+        <!-- YouTube player container -->
+        <div id="player"></div>
+    </div>
+</body>
+</html>
